@@ -31,7 +31,7 @@ public class NameFormatManager {
 		
 		for(int i = collumn.length; i>0; i--) {
 			
-			pos += getPosition(collumn[i])*Math.pow(10, (collumn.length-i));
+			pos += getPosition(collumn[i])*Math.pow(26, (collumn.length-i));
 			
 		}
 		
