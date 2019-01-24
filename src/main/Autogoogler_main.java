@@ -17,7 +17,7 @@ public class Autogoogler_main {
 		boolean selecterror = false;
 
 		FileHandler fh = new FileHandler();
-		AlphabetManager am = new AlphabetManager();
+		NameFormatManager am = new NameFormatManager();
 		File f = fh.getPath();
 		fh.loadFile(f);
 
@@ -27,9 +27,8 @@ public class Autogoogler_main {
 		do {
 			selecterror = false;
 			try {
-				char[] in= JOptionPane.showInputDialog("Selected Collumn").toCharArray();
-				collumn = (in.length-1)*26;
-				collumn += am.getPosition(in[in.length-1]);
+				String in= JOptionPane.showInputDialog("Selected Collumn");
+				collumn = am.getCollumn(in);
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Malformed Input. Could not parse Integer");
 				selecterror = true;
